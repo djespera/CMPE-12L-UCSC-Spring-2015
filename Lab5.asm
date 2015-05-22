@@ -18,13 +18,13 @@
 ;
 
 
-       .ORIG	x3000 	      ;this sets where the following code will start in memory
-AND		R1,R0, 0
+       .ORIG	x3000 	                   ;this sets where the following code will start in memory
+	AND	R1,R0, 0
        LD	R1, COUNT
 LOOP
        LEA	R0,HELLO	      ; LOAD
        PUTS			
-ADD        	R1, R1, -1            ; Register Contains Counter value of x0005 Decrements Each Time it Loops
+	ADD     R1, R1, -1            ; Register Contains Counter value of x0005 Decrements Each Time it Loops
        BRp      LOOP 
        Trap	x25                   ;This halts the program
 	
